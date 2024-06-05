@@ -10,6 +10,12 @@ body{
 h1, h3{
  font-weight:400;
 }
+.logo{
+    position: absolute;
+    top:-110px;
+    left:-100px;
+    scale:.5;
+}
 .weather-app{
     min-height: 100vh;
     background-image: url(./images/day/cloudy.jpg);
@@ -147,14 +153,80 @@ h1, h3{
         width:100%;
         top:initial;
     }
+    .logo{
+        position: absolute;
+        top:-120px;
+        left:420px;
+        scale:.5;
+    }
+}
+@media screen and (max-width: 796px){
+    .logo{
+        position: absolute;
+        top:-120px;
+        left:420px;
+        scale:.3;
+    }
+}
+
+@media screen and (max-width:540px){
+    html{
+        font-size: 11px;
+    }
+    .logo{
+        position: absolute;
+        top:-150px;
+        left:230px;
+        scale:.2;
+    }
 }
 @media screen and (max-width:500px){
     html{
         font-size: 12px;
+    }
+    .logo{
+        position: absolute;
+        top:-210px;
+        left:-65px;
+        scale:.1;
+    }
+}
+@media screen and (max-width:430px){
+    html{
+        font-size: 11px;
+    }
+    .logo{
+        position: absolute;
+        top:-210px;
+        left:-195px;
+        scale:.15;
+    }
+}
+@media screen and (max-width:414px){
+    html{
+        font-size: 11px;
+    }
+    .logo{
+        position: absolute;
+        top:-210px;
+        left:-195px;
+        scale:.1;
+    }
+}
+@media screen and (max-width:375px){
+    html{
+        font-size: 11px;
+    }
+    .logo{
+        position: absolute;
+        top:-210px;
+        left:-195px;
+        scale:.1;
     }
 }
 @media screen and (max-height:300px){
     .weather-app{
         min-height: 40em;
     }
+
 }
