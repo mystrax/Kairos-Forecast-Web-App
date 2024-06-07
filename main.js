@@ -64,7 +64,7 @@ function fetchWeatherData() {
             cloudOutput.innerHTML = data.current.cloud + "%";
             humidityOutput.innerHTML = data.current.humidity + "%";
             windOutput.innerHTML = data.current.wind_kph + "km/h";
-            regionOutput.innerHTML = data.location.region;
+            regionOutput.innerHTML = data.location.tz_id;
             countryOutput.innerHTML = data.location.country;
 
             let timeOfDay = "day";
