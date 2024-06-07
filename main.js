@@ -5,6 +5,7 @@ const timeOutput = document.querySelector('.time');
 const conditionOutput = document.querySelector('.condition');
 const nameOutput = document.querySelector('.name');
 const regionOutput = document.querySelector('.region');
+const feelslikeOutput = document.querySelector('.feelslike_c');
 const countryOutput = document.querySelector('.country');
 const iconOutput = document.querySelector('.icon');
 const cloudOutput = document.querySelector('.cloud');
@@ -61,6 +62,7 @@ function fetchWeatherData() {
             const iconId = data.current.condition.icon.substr("//cdn.weatherapi.com/weather/64x64/".length);
             iconOutput.src = `./icons/${iconId}`; 
 
+            feelslikeOutput.innerHTML = data.current.feelslike_c + "&#176;";
             cloudOutput.innerHTML = data.current.cloud + "%";
             humidityOutput.innerHTML = data.current.humidity + "%";
             windOutput.innerHTML = data.current.wind_kph + "km/h";
