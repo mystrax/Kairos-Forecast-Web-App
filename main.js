@@ -4,6 +4,8 @@ const dateOutput = document.querySelector('.date');
 const timeOutput = document.querySelector('.time');
 const conditionOutput = document.querySelector('.condition');
 const nameOutput = document.querySelector('.name');
+const regionOutput = document.querySelector('.region');
+const countryOutput = document.querySelector('.country');
 const iconOutput = document.querySelector('.icon');
 const cloudOutput = document.querySelector('.cloud');
 const humidityOutput = document.querySelector('.humidity');
@@ -17,7 +19,7 @@ let cityInput = "London";
 
 cities.forEach((city) => {
     city.addEventListener('click', (e) => {
-        cityInput = e.target.innerHTML; // Use assignment operator here
+        cityInput = e.target.innerHTML; 
         fetchWeatherData();
         app.style.opacity = "0";
     });
@@ -37,7 +39,7 @@ form.addEventListener('submit', (e) => {
 
 function dayOfTheWeek(day, month, year) {
     const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    return weekday[new Date(`${day}/${month}/${year}`).getDay()]; // Use backticks for template literals
+    return weekday[new Date(`${day}/${month}/${year}`).getDay()]; 
 }
 
 function fetchWeatherData() {
@@ -53,15 +55,17 @@ function fetchWeatherData() {
             const d = parseInt(date.substr(8, 2));
             const time = date.substr(11);
 
-            dateOutput.innerHTML = `${dayOfTheWeek(d, m, y)} ${d}/${m}/${y}`; // Use backticks for template literals
+            dateOutput.innerHTML = `${dayOfTheWeek(d, m, y)} ${d}/${m}/${y}`; 
             timeOutput.innerHTML = time;
             nameOutput.innerHTML = data.location.name;
             const iconId = data.current.condition.icon.substr("//cdn.weatherapi.com/weather/64x64/".length);
-            iconOutput.src = `./icons/${iconId}`; // Fix typo here
+            iconOutput.src = `./icons/${iconId}`; 
 
             cloudOutput.innerHTML = data.current.cloud + "%";
             humidityOutput.innerHTML = data.current.humidity + "%";
             windOutput.innerHTML = data.current.wind_kph + "km/h";
+            regionOutput.innerHTML = data.location.region;
+            countryOutput.innerHTML = data.location.country;
 
             let timeOfDay = "day";
             const code = data.current.condition.code;
@@ -69,7 +73,7 @@ function fetchWeatherData() {
                 timeOfDay = "night";
             }
             if (code == 1000) {
-                app.style.backgroundImage = `url(./images/${timeOfDay}/clear.jpg)`; // Use backticks for template literals
+                app.style.backgroundImage = `url(./images/${timeOfDay}/clear.jpg)`; 
                 btn.style.background = "#e5ba92";
                 if (timeOfDay == "night") {
                     btn.style.background = "#181e27";
