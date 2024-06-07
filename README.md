@@ -1,4 +1,4 @@
-<h1>Kairos Forecast</h1>
+<h1>Kairos Forecast - Weather Forecast Web App</h1>
 
 ![image](https://github.com/mystrax/Kairos-Forecast-Web-App/assets/91404681/1bdbdc1d-ea18-47e2-bbb3-158e9868ee83)
 
